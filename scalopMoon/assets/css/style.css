@@ -102,6 +102,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 768px) {
+  
   #header.header-scrolled {
     padding: 15px 0;
   }
@@ -127,13 +128,16 @@ h1, h2, h3, h4, h5, h6 {
 .nav-menu a {
   display: block;
   position: relative;
-  color: #2f4d5a;
+  color: #fff;
   padding: 20px 15px;
   transition: 0.3s;
   font-size: 13px;
   font-family: "Poppins", sans-serif;
   text-transform: uppercase;
   font-weight: 500;
+  text-shadow: 1px 4px 3px rgba(0,0,0,0.6),
+             1px 8px 13px rgba(0,0,0,0.4),
+             1px 18px 23px rgba(0,0,0,0.6);
 }
 
 .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
@@ -343,7 +347,8 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/bg-image/bg.jpg") top center;
+  background: url("../img/bg-image/scallopMoon.png") top center;
+  background-position: center center;
   background-size: cover;
   position: relative;
   margin-bottom: -90px;
@@ -352,7 +357,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero .hero-container {
   position: absolute;
   bottom: 0;
-  top: 0;
+  top: 15;
   left: 0;
   right: 0;
   display: flex;
@@ -360,6 +365,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   flex-direction: column;
   text-align: center;
+  margin-bottom: 50px;
 }
 
 #hero h1 {
@@ -408,7 +414,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 768px) {
   #hero h1 {
-    font-size: 28px;
+    font-size: 42px;
     line-height: 36px;
   }
   #hero h2 {
@@ -721,7 +727,7 @@ section {
 # Cta
 --------------------------------------------------------------*/
 .cta {
-  background: linear-gradient(rgba(103, 176, 209, 0.8), rgba(103, 176, 209, 0.8)), url("../img/rocket-image/Rocket\ 3.4.jpg") fixed center center;
+  background: linear-gradient(rgba(126, 106, 236, 0.5), rgba(147, 139, 218, 0.4)), url("../img/rocket-image/Rocket\ 3.4.jpg") fixed center center;
   background-size: cover;
   padding: 60px 0;
 }
@@ -1261,7 +1267,7 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: #263f49;
+  background: #4a6bd6;
   padding: 0 0 30px 0;
   color: #fff;
   font-size: 14px;
