@@ -2730,7 +2730,7 @@ html.no-csstransitions .home-content__main {
  * ------------------------------------------------------------------- */
 .s-about {
   padding-top: 18rem;
-  padding-bottom: 18rem;
+  /* padding-bottom: 18rem; */
   background-color: #121212;
   position: relative;
 }
@@ -2739,13 +2739,13 @@ html.no-csstransitions .home-content__main {
  * ## about process
  * ------------------------------------------------------------------- */
 .process {
-  margin-top: 6.6rem;
+  /* margin-top: 6.6rem; */
   counter-reset: ctr;
 }
 
 .process h4 {
   padding-left: 7rem;
-  margin-bottom: 2.1rem;
+  /* margin-bottom: 2.1rem; */
   position: relative;
 }
 
@@ -2771,7 +2771,7 @@ html.no-csstransitions .home-content__main {
 .item-process {
   position: relative;
   min-height: 24.6rem;
-  margin-bottom: 3rem;
+  /* margin-bottom: 3rem; */
 }
 
 .item-process:nth-child(2n+1) {
@@ -2860,7 +2860,7 @@ html.no-csstransitions .home-content__main {
  *
  * ------------------------------------------------------------------- */
 .s-services {
-  padding-top: 18rem;
+  padding-top: 5rem;
   padding-bottom: 18rem;
   position: relative;
 }
@@ -2869,7 +2869,7 @@ html.no-csstransitions .home-content__main {
  * ## services list
  * ------------------------------------------------------------------- */
 .services {
-  margin-top: 9rem;
+  /* margin-top: 9rem; */
 }
 
 .item-service {
