@@ -227,6 +227,18 @@ span {
   color: #5d79c5;
 }
 
+@media (min-width: 1280px) {
+  #hero h1 {
+    margin-top : 50px;
+  }
+}
+
+@media (min-width: 360px) {
+  #hero h1 {
+    margin-top: 50px;
+  }
+}
+
 @media (max-width: 768px) {
   #hero h1 {
     font-size: 28px;
