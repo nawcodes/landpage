@@ -195,8 +195,7 @@ span {
   height: calc(100vh - 40px);
   background: url(../img/hero-bg.png) center bottom no-repeat;
   background-size: 100%;
-  position: relative;
-  margin-top: 40px;
+  margin-top: 70px;
 }
 
 @media (min-width: 1025px) {
@@ -204,6 +203,15 @@ span {
     background-attachment: fixed;
   }
 }
+
+#hero img {
+  margin-top: 8rem;
+
+  box-shadow: 0 2px 10px 2px rgba(0, 0, 0, 0.3);
+  border-radius:5px;
+}
+
+
 
 #hero .hero-container {
   position: absolute;
@@ -219,6 +227,7 @@ span {
 }
 
 #hero h1 {
+  padding-top: 60px;
   margin: 0 0 10px 0;
   font-size: 48px;
   font-weight: 700;
@@ -226,6 +235,11 @@ span {
   font-family: "Philosopher", sans-serif;
   color: #5d79c5;
 }
+
+
+/* .btn-prev .btn-s-prev .btn-next .btn-s-next {
+  font-size: wp;
+} */
 
 @media (min-width: 1280px) {
   #hero h1 {
