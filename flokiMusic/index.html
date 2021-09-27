@@ -10,7 +10,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/pollarBear.jpg" rel="icon">
+  <link href="assets/img/remove.png" rel="icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,700|Philosopher:400,400i,700,700i" rel="stylesheet">
@@ -46,7 +46,6 @@
     </div>
       
   </header><!-- End Header -->
-
   <!-- ======= Hero Section ======= -->
   <section id="hero">
     <div class="container">
@@ -54,21 +53,21 @@
             <div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center">
                     <img src="assets/img/yellow.jpeg" class="img-cass" alt="" data-aos="zoom-out" data-aos-delay="100">
             </div>
-            <div class="col-lg-8 col-md-6 col-sm-12 d-flex justify-content-center">
+            <div class="col-lg-8 col-md-6 col-sm-12 d-flex justify-content-center music-containers" id="music-containers">
                 <div class="hero-play" data-aos="fade-in">
                 <h1>Turn Up Your Volume!</h1>
                 <h2>Let's dance with me!</h2>
-                  <div class="row">
-                    <div class="col-lg-12 btn-plays">
+                  <div class="row  ply">
+                    <div class="col-lg-12" id="music-container">
                       <a href="#" data-toggle="modal" data-target="#staticBackdrop" class="btn-prev">
                         <i class="fa fa-step-backward mx-2" style="font-size:40px; color: #5d79c5;"></i>
                       </a>
                       <a href="#" class="btn-s-prev">
                         <i class="fa fa-backward mx-2" style="font-size:40px; color: #5d79c5;" data-toggle="modal" data-target="#kid"></i>
                       </a>
-                      <a href="#" class="btn-pause" data-toggle="modal" data-target="#pause">
-                        <i class="fa fa-pause-circle mx-2 text-warning" style="font-size:45px; color: #5d79c5;" ></i>
-                      </a>
+                      <button  id="btn-play" class="btn-play"  style="background: transparent; border:none;">
+                        <i class="fa fa-play mx-2 text-warning" style="font-size:45px; color: #5d79c5;" ></i>
+                      </button>
                       <a href="#" class="btn-next">
                         <i class="fa fa-forward mx-2" style="font-size:40px; color: #5d79c5;" data-toggle="modal" data-target="#kid"></i>
                       </a>
@@ -78,12 +77,12 @@
                     </div>
                   </div>
                   <div class="row mt-4">
-                    <div class="col-lg-4 col-md-4 img-container d-flex justify-content-center">
+                    <div class="col-lg-4 col-md-4 img-container  d-flex justify-content-center">
                       <img src="assets/img/black.jpeg"  class="rounded rounded-circle" width="100" alt="">
                     </div>
                     <div class="col-lg-8 col-md-4 progress-sec">
                       <div class="progress-container">
-                        <div class="progress"></div>
+                        <div class="progress" id="progress"></div>
                       </div>
                       <div class="row">
                         <div class="col-lg-12 d-flex justify-content-center mt-3">
@@ -105,7 +104,7 @@
         </div>
     </div> 
   </section><!-- End Hero Section -->
-
+  <audio src="assets/audio/flokiMusic.mp3" id="audio"></audio>
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -351,7 +350,56 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    const btnPlay = document.getElementById('btn-play');
+    const musicContainer = document.getElementById('music-containers');
+    const audio = document.getElementById('audio');
+    const progress = document.querySelector('.progress');
+    
 
+
+    function playSong() {
+      musicContainer.classList.add('ply');
+      btnPlay.querySelector('i.fa').classList.remove('fa-play');
+      btnPlay.querySelector('i.fa').classList.add('fa-pause-circle');
+
+      audio.play();
+      audio.addEventListener('timeupdate', updateProgress); 
+
+    }
+
+    function pauseSong() {
+      musicContainer.classList.remove('ply');
+      btnPlay.querySelector('i.fa').classList.remove('fa-pause-circle');
+      btnPlay.querySelector('i.fa').classList.add('fa-play');
+
+      audio.pause();
+
+    }
+
+    btnPlay.addEventListener('click', function() {
+      isPlaying = musicContainer.classList.contains('ply');
+      if(isPlaying) {
+        pauseSong();
+      }else {
+        playSong();
+      }
+    });
+
+
+    function updateProgress(e) {
+      const {duration, currentTime } = e.srcElement;
+      const progressPercent = (currentTime / duration) * 100;
+
+      progress.style.width = `${progressPercent}%`;
+
+      console.log(progressPercent);
+
+
+    }
+
+
+</script>
 </body>
 
 </html>

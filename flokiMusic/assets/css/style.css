@@ -262,7 +262,14 @@ span {
 .img-container img {
   object-fit: cover;
   animation: rotate 3s linear infinite;
+
+  animation-play-state: paused;
 }
+
+.music-containers.ply .img-container img {
+    animation-play-state: running;
+} 
+
 
 @keyframes rotate {
   from {
